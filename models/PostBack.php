@@ -1,13 +1,20 @@
 <?php
+/**
+ * class PostBack
+ * Guzzle to gather data
+ *
+ * todo: map lead fields to SF
+ */
 
 class PostBack {
+
 
     public function __construct($leadID) {
       $this->lead = $this->getData($leadID);
     }
 
     // Call GNL
-    public function getData($leadID) {
+    private function getData($leadID) {
       $client = new GuzzleHttp\Client();
       $response = $client->request('GET', getenv('GNL_URL') . $leadID, [
         'headers' => [
