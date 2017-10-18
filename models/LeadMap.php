@@ -14,13 +14,7 @@ class LeadMap
     }
 
     private function mapData($leadData) {
-      // print '<pre>';
-      // print_r($leadData);
-
       $fields = fieldMap();
-      //print_r($fields);
-
-
       return $leadData;
     }
 

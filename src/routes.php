@@ -5,6 +5,8 @@ use Slim\Http\Response;
 
 require 'models/PostBack.php';
 require 'models/LeadMap.php';
+require 'models/DispenseRecord.php';
+require 'models/CheckLead.php';
 
 // POSTBACK GNL DATA
 $app->get('/postback', function (Request $request, Response $response, array $args) {
@@ -13,7 +15,11 @@ $app->get('/postback', function (Request $request, Response $response, array $ar
     $mapData = new LeadMap($leadData);
 
     print '<pre>';
-    print_r($mapData);
+    print_r($mapData->leadMapped->lead['id']);
+
+    $check_lead = new CheckLead($mapData->leadMapped->lead['id']);
+    print_r($check_lead);
+    $lead = newLead($check_lead);
 
 });
 
