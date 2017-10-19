@@ -35,3 +35,17 @@ $container['view'] = function ($container) {
 };
 
 
+// Register component on container
+$container['SFbuilder'] = function ($container) {
+
+        ## Salesforce
+        $SFbuilder = new \Phpforce\SoapClient\ClientBuilder(
+          __DIR__ . '/wsdl/enterprise.wsdl.xml',
+          $_ENV['SF_USER'],
+          $_ENV['SF_PASS'],
+          $_ENV['SF_API']
+        );
+
+    return $SFbuilder;
+};
+

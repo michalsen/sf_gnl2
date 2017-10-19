@@ -21,33 +21,38 @@ $app->get('/postback', function (Request $request, Response $response, array $ar
 
 
 
-        ## Salesforce
-        $SFbuilder = new \Phpforce\SoapClient\ClientBuilder(
-          __DIR__ . '/wsdl/enterprise.wsdl.xml',
-          $_ENV['SF_USER'],
-          $_ENV['SF_PASS'],
-          $_ENV['SF_API']
-        );
+        // ## Salesforce
+        // $SFbuilder = new \Phpforce\SoapClient\ClientBuilder(
+        //   __DIR__ . '/wsdl/enterprise.wsdl.xml',
+        //   $_ENV['SF_USER'],
+        //   $_ENV['SF_PASS'],
+        //   $_ENV['SF_API']
+        // );
 
-        $client = $SFbuilder->build();
+        // $client = $SFbuilder->build();
 
-        try {
-          $fields = $client->describeSObjects(array('Lead'));
-        } catch (Exception $e) {
-          print $e;
-        }
+        // try {
+        //   $fields = $client->describeSObjects(array('Lead'));
+        // } catch (Exception $e) {
+        //   print $e;
+        // }
 
-        $var = $fields[0]->getFields()->toArray();
+        // $var = $fields[0]->getFields()->toArray();
 
-        $sfFields = [];
+        // $sfFields = [];
 
-        foreach ($var as $key => $value) {
-          $sfFields[] = $value->getName();
-        }
+        // foreach ($var as $key => $value) {
+        //   $sfFields[] = $value->getName();
+        // }
 
+        // $container = $app->getContainer();
+        // print '<pre>';
+        // print_r($app);
+        // $this->logger->addInfo("Something interesting happened");
+
+        $this->SFbuilder->build();
         print '<pre>';
-        print_r($sfFields);
-
+        print_r($this);
 });
 
 
