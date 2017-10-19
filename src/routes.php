@@ -19,6 +19,26 @@ $app->get('/postback', function (Request $request, Response $response, array $ar
     $check_lead = new CheckLead($mapData->leadMapped->lead['id']);
     // $lead = newLead($check_lead);
 
+
+        $client = $SFbuilder->build();
+
+        try {
+          $fields = $client->describeSObjects(array('Lead'));
+        } catch (Exception $e) {
+          print $e;
+        }
+
+        $var = $fields[0]->getFields()->toArray();
+
+        $sfFields = [];
+
+        foreach ($var as $key => $value) {
+          $sfFields[] = $value->getName();
+        }
+
+        print '<pre>';
+        print_r($sfFields);
+
 });
 
 

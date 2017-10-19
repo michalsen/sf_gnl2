@@ -26,6 +26,9 @@ $SFbuilder = new \Phpforce\SoapClient\ClientBuilder(
   $_ENV['SF_API']
 );
 
+print '<pre>';
+print_r($SFbuilder);
+print '</pre>';
 
 ## Calendar
 $calendar = $_ENV['CAL_URL'];

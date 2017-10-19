@@ -1,14 +1,10 @@
 {
-    "name": "slim/slim-skeleton",
-    "description": "A Slim Framework skeleton application for rapid development",
-    "keywords": ["microframework", "rest", "router", "psr7"],
-    "homepage": "http://github.com/slimphp/Slim-Skeleton",
-    "license": "MIT",
+    "name": "emichalsen/sf_gnl2",
+    "description": "A test app in development",
     "authors": [
         {
-            "name": "Josh Lockhart",
-            "email": "info@joshlockhart.com",
-            "homepage": "http://www.joshlockhart.com/"
+            "name": "Eric Michalsen",
+            "email": "eric.michalsen@gmail.com"
         }
     ],
     "require": {
@@ -23,12 +19,12 @@
         "paquettg/php-html-parser": "^1.7",
         "yeriomin/redbean-single-file": "^4.3",
         "phpforce/common": "dev-master",
-        "doctrine/collections": "^1.4",
         "phpforce/soap-client": "^0.1.0",
         "phpforce/salesforce-bundle": "dev-master",
         "developerforce/force.com-toolkit-for-php": "^27.0",
         "rogercreasy/slim-dot-env": "dev-master",
-        "vlucas/phpdotenv": "^2.4"
+        "vlucas/phpdotenv": "^2.4",
+        "doctrine/collections": "^1.4"
     },
     "require-dev": {
         "phpunit/phpunit": ">=4.8 < 6.0"
