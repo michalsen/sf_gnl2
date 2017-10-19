@@ -14,12 +14,10 @@ $app->get('/postback', function (Request $request, Response $response, array $ar
     $leadData = new PostBack(1413007);
     $mapData = new LeadMap($leadData);
 
-    print '<pre>';
-    print_r($mapData->leadMapped->lead['id']);
+    print 'id: ' . $mapData->leadMapped->lead['id'] . '<br>';
 
     $check_lead = new CheckLead($mapData->leadMapped->lead['id']);
-    print_r($check_lead);
-    $lead = newLead($check_lead);
+    // $lead = newLead($check_lead);
 
 });
 

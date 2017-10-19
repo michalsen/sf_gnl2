@@ -26,6 +26,8 @@ class DispenseRecord {
 
 
 function newLead($check_lead){
+  print '<pre>';
+  print_r($check_lead->gnlid);
     if (!isset($check_lead->checklead)) {
         //$response = $ENT->create($new_lead, 'lead');
           $response = [];
@@ -40,8 +42,8 @@ function newLead($check_lead){
          }
    }
      else {
-
-     $gnlLead = new GetLead($lead['SNLID__c']);
+     $lead['SNLID__c'] = 'test';
+     // $gnlLead = new GetLead($lead['SNLID__c']);
 
        $salesMapping = [
             1 => '005A0000000QoJS',
@@ -64,9 +66,9 @@ function newLead($check_lead){
                $salesUpdate = $cvalue;
              }
            }
-       $gnlObject->User__c = $salesMapping[$salesUpdate];
+       //$gnlObject->User__c = $salesMapping[$salesUpdate];
 
-       $response = $ENT->update(array ($gnlObject), 'Lead');
+       // $response = $ENT->update(array ($gnlObject), 'Lead');
        $record = array($gnl_lead, $check_lead->checklead, 'success', 'update');
        $dispense = new DispenseRecord($record);
    }
