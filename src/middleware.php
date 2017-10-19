@@ -18,17 +18,5 @@ $db = $_ENV['DB_NAME'];
 R::setup("mysql:host=$host;dbname=$db", $user, $pass);
 
 
-## Salesforce
-$SFbuilder = new \Phpforce\SoapClient\ClientBuilder(
-  __DIR__ . '/wsdl/enterprise.wsdl.xml',
-  $_ENV['SF_USER'],
-  $_ENV['SF_PASS'],
-  $_ENV['SF_API']
-);
-
-print '<pre>';
-print_r($SFbuilder);
-print '</pre>';
-
 ## Calendar
 $calendar = $_ENV['CAL_URL'];

@@ -20,6 +20,15 @@ $app->get('/postback', function (Request $request, Response $response, array $ar
     // $lead = newLead($check_lead);
 
 
+
+        ## Salesforce
+        $SFbuilder = new \Phpforce\SoapClient\ClientBuilder(
+          __DIR__ . '/wsdl/enterprise.wsdl.xml',
+          $_ENV['SF_USER'],
+          $_ENV['SF_PASS'],
+          $_ENV['SF_API']
+        );
+
         $client = $SFbuilder->build();
 
         try {
